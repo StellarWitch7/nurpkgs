@@ -8,13 +8,12 @@
 
 { pkgs ? import <nixpkgs> { } }:
 
+with pkgs;
 {
   # The `lib`, `modules`, and `overlays` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
-
-  with pkgs;
 
   moth-lang = callPackage ./pkgs/moth-lang { };
 }
