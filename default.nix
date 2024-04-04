@@ -15,4 +15,5 @@ with pkgs; {
   overlays = import ./overlays; # nixpkgs overlays
 
   moth-lang = callPackage ./pkgs/moth-lang { };
+  vault = callPackage ./pkgs/vault { };
 }
