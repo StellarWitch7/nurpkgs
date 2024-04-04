@@ -8,8 +8,7 @@
 
 { pkgs ? import <nixpkgs> { } }:
 
-with pkgs;
-{
+with pkgs; {
   # The `lib`, `modules`, and `overlays` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
