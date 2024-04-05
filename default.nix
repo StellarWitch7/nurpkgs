@@ -17,4 +17,5 @@ with pkgs; {
   moth-lang = callPackage ./pkgs/moth-lang { };
   vault = callPackage ./pkgs/vault { };
   nixbrains = callPackage ./pkgs/nixbrains { };
+  easy-nixos = callPackage ./pkgs/easy-nixos { };
 }

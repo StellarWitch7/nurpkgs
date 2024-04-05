@@ -12,8 +12,9 @@ stdenv.mkDerivation rec {
   };
 
   installPhase = ''
-    cp -r env $out/
-    cp -r bin $out/
+    mkdir -p $out
+    cp -r env $out/env
+    cp -r bin $out/bin
     chmod -R +x $out/bin
   '';
 
