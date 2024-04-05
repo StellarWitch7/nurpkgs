@@ -15,6 +15,7 @@ stdenv.mkDerivation rec {
     mkdir -p $out
     cp -r bin $out/bin
     chmod -R +x $out/bin
+    ln -s ${pkgs.home-manager.out}/bin/home-manager $out/bin/home-manager
   '';
 
   runtimeDeps = with pkgs; [
