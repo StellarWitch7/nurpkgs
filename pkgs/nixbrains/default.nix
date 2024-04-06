@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     owner = "StellarWitch7";
     repo = "nixbrains";
     rev = "v${version}";
-    sha256 = "";
+    sha256 = "sha256-N0BHOIOC7TYamC+4wf7obQ9FH+PwNnhIyk7OLht1gjo=";
   };
 
   installPhase = ''
