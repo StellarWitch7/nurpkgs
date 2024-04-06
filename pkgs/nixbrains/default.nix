@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   name = "nixbrains-${version}";
-  version = "1.1";
+  version = "1.2";
 
   src = fetchFromGitHub {
     owner = "StellarWitch7";
     repo = "nixbrains";
     rev = "v${version}";
-    sha256 = "sha256-N0BHOIOC7TYamC+4wf7obQ9FH+PwNnhIyk7OLht1gjo=";
+    sha256 = "sha256-BDbyqADGr7MJn5qQ/ummDj2LG6g6pC0damQt/EnVLWA=";
   };
 
   installPhase = ''
