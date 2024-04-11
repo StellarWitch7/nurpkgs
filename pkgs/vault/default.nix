@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   name = "vault-${version}";
-  version = "1.1";
+  version = "1.2";
 
   src = fetchFromGitHub {
     owner = "StellarWitch7";
     repo = "vault";
     rev = "v${version}";
-    sha256 = "sha256-tvc++eezpC2EM1uGuQ3Za+GgKFe9xPhX4VBLWQyibxY=";
+    sha256 = "sha256-WzGX0k0z9WAFEMnpPD/SfcDM5rnN1AKCM5KPkuSdR0w=";
   };
 
   installPhase = ''
