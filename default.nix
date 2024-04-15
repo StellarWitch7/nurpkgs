@@ -14,8 +14,12 @@ with pkgs; {
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
+  # my programs/libraries
   moth-lang = callPackage ./pkgs/moth-lang { };
   vault = callPackage ./pkgs/vault { };
   nixbrains = callPackage ./pkgs/nixbrains { };
   easy-nixos = callPackage ./pkgs/easy-nixos { };
+
+  # programs/libraries by other people
+  ImageSorter = callPackage ./pkgs/ImageSorter { };
 }
