@@ -11,4 +11,5 @@
   (fetchNuGet { pname = "libLLVM.runtime.win-x64"; version = "16.0.6"; sha256 = "0pnixcchip8j6xn08bjvfwqsqkl49jgc26w91ffk0gw954xixsgp"; })
   (fetchNuGet { pname = "LLVMSharp"; version = "16.0.0"; sha256 = "1qxsbdhhc0wii1vh0nfd8m8dyrzcfgw8178k8bf481s6n67wliig"; })
   (fetchNuGet { pname = "LLVMSharp.Interop"; version = "16.0.0"; sha256 = "0z56a2x0y0dhaca0qqpnlfidfb8kq29g6xd70brf6wajwkkb0nj4"; })
+  (fetchNuGet { pname = "Samboy063.Tomlet"; version = "5.3.1"; sha256 = "0skh0pqr7rkhq96rfdz8gsqx13rvk9b4yxvfb53rsj0ipyyia38p"; })
 ]

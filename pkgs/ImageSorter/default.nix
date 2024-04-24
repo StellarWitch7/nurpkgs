@@ -35,5 +35,6 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     homepage = "https://github.com/htmlcoderexe/ImageSorter";
     description = "A GUI (Winforms) program for quickly and manually sorting images";
+    license = licenses.mit;
   };
 }
