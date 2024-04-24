@@ -11,7 +11,7 @@ buildDotnetModule rec {
     sha256 = "sha256-yYOdJQ1XVGyo0vuFpzKYm1FN74wKoqD/4FCz8//fYoo=";
   };
 
-  projectFile = "Moth.Luna/Moth.Luna.csproj";
+  projectFile = "moth-lang.sln";
 
   nugetDeps = ./deps.nix;
   dotnet-sdk = pkgs.dotnetCorePackages.sdk_7_0;
