@@ -9,7 +9,7 @@
 { pkgs ? import <nixpkgs> { } }:
 
 with pkgs; {
-  # The `lib`, `modules`, and `overlays` names are special
+  # the `lib`, `modules`, and `overlays` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
@@ -22,4 +22,7 @@ with pkgs; {
 
   # programs/libraries by other people
   ImageSorter = callPackage ./pkgs/ImageSorter { };
+
+  # alt packages
+  jdk8-32bit = javaPackages.compiler.mkOpenjdkLinuxOnly ./pkgs/jdk8-32bit/default.nix { };
 }
