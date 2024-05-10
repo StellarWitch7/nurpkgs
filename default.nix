@@ -22,7 +22,4 @@ with pkgs; {
 
   # programs/libraries by other people
   ImageSorter = callPackage ./pkgs/ImageSorter { };
-
-  # alt packages
-  jdk8-32bit = javaPackages.compiler.mkOpenjdkLinuxOnly ./pkgs/jdk8-32bit/default.nix { };
 }
