@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   name = "easy-nixos-${version}";
-  version = "1.3";
+  version = "1.4";
 
   src = fetchFromGitHub {
     owner = "StellarWitch7";
     repo = "easy-nixos";
     rev = "v${version}";
-    sha256 = "sha256-/SwvbhWwrdXRO5FTjjYbO3PLNGgbykh0+tB2j30n4Pw=";
+    sha256 = "sha256-79DYiYXHiRjCbCaheZ+Fjw8Ssgvvnwwg2Ltvgq/TXlI=";
   };
 
   installPhase = ''
@@ -20,7 +20,6 @@ stdenv.mkDerivation rec {
 
   runtimeDeps = with pkgs; [
     home-manager
-    git
     nano
   ];
 
