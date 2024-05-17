@@ -3,13 +3,13 @@
 stdenv.mkDerivation rec {
   name = "${pname}-${version}";
   pname = "ImageSorter";
-  version = "1.1.0";
+  version = "1.2.0";
 
   src = fetchFromGitHub {
     owner = "htmlcoderexe";
     repo = pname;
     rev = "v${version}";
-    sha256 = "sha256-B28C05f0WycdatBmXmWsrTBCF5M+McUQu/0Zrt/qfY0=";
+    sha256 = "sha256-qBPAUQ7kTCIkLJB2tEj+XYoYdXmpGqeQ8BiVj489Ot0=";
   };
 
   buildInputs = with pkgs; [
