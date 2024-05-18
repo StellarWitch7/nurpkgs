@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   name = "easy-nixos-${version}";
-  version = "1.4";
+  version = "1.5";
 
   src = fetchFromGitHub {
     owner = "StellarWitch7";
     repo = "easy-nixos";
     rev = "v${version}";
-    sha256 = "sha256-79DYiYXHiRjCbCaheZ+Fjw8Ssgvvnwwg2Ltvgq/TXlI=";
+    sha256 = "sha256-po0wcJ6FVHemAOysvbcEr37bIVV4jGxl6dLbc854eDI=";
   };
 
   installPhase = ''
