@@ -24,6 +24,8 @@ stdenv.mkDerivation rec {
     mkdir -p $out
     cp -r bin $out/bin
     chmod -R +x $out/bin
+    ln -s ${keepassxc.out}/bin/keepassxc-cli $out/bin/keepassxc-cli
+    ln -s ${sirikali.out}/bin/sirikali $out/bin/sirikali
   '';
 
   meta = with lib; {
