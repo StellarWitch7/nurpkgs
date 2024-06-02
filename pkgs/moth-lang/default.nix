@@ -1,4 +1,10 @@
-{ pkgs, lib, fetchFromGitHub, buildDotnetModule }:
+{ lib
+, fetchFromGitHub
+, buildDotnetModule
+, dotnetCorePackages
+, clang_16
+, git
+, git-extras }:
 
 buildDotnetModule rec {
   pname = "moth-lang";
@@ -14,10 +20,10 @@ buildDotnetModule rec {
   projectFile = "moth-lang.sln";
 
   nugetDeps = ./deps.nix;
-  dotnet-sdk = pkgs.dotnetCorePackages.sdk_7_0;
-  dotnet-runtime = pkgs.dotnetCorePackages.runtime_7_0;
+  dotnet-sdk = dotnetCorePackages.sdk_7_0;
+  dotnet-runtime = dotnetCorePackages.runtime_7_0;
 
-  runtimeDeps = with pkgs; [
+  runtimeDeps = [
     clang_16
     git
     git-extras

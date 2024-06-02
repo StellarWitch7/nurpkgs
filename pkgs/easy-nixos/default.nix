@@ -1,4 +1,8 @@
-{ stdenv, pkgs, lib, fetchFromGitHub }:
+{ stdenv
+, lib
+, fetchFromGitHub
+, home-manager
+, nano }:
 
 stdenv.mkDerivation rec {
   name = "easy-nixos-${version}";
@@ -15,10 +19,9 @@ stdenv.mkDerivation rec {
     mkdir -p $out
     cp -r bin $out/bin
     chmod -R +x $out/bin
-    ln -s ${pkgs.home-manager.out}/bin/home-manager $out/bin/home-manager
   '';
 
-  runtimeDeps = with pkgs; [
+  runtimeDeps = [
     home-manager
     nano
   ];

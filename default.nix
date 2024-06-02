@@ -22,4 +22,5 @@ with pkgs; {
 
   # programs/libraries by other people
   ImageSorter = callPackage ./pkgs/ImageSorter { };
+  localtonet = callPackage ./pkgs/localtonet { };
 }

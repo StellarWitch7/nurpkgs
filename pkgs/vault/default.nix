@@ -1,4 +1,8 @@
-{ stdenv, pkgs, lib, fetchFromGitHub }:
+{ stdenv
+, lib
+, fetchFromGitHub
+, keepassxc
+, sirikali }:
 
 stdenv.mkDerivation rec {
   name = "vault-${version}";
@@ -11,18 +15,16 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-WzGX0k0z9WAFEMnpPD/SfcDM5rnN1AKCM5KPkuSdR0w=";
   };
 
+  buildInputs = [
+    keepassxc
+    sirikali
+  ];
+
   installPhase = ''
     mkdir -p $out
     cp -r bin $out/bin
     chmod -R +x $out/bin
-    ln -s ${pkgs.keepassxc.out}/bin/keepassxc-cli $out/bin/keepassxc-cli
-    ln -s ${pkgs.sirikali.out}/bin/sirikali $out/bin/sirikali
   '';
-
-  runtimeDeps = with pkgs; [
-    keepassxc
-    sirikali
-  ];
 
   meta = with lib; {
     homepage = "https://github.com/StellarWitch7/vault";

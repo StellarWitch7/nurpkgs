@@ -1,4 +1,6 @@
-{ stdenv, pkgs, lib, fetchFromGitHub }:
+{ stdenv
+, lib
+, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
   name = "nixbrains-${version}";
