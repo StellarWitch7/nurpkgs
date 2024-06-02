@@ -16,7 +16,7 @@ stdenv.mkDerivation rec {
     sha256 = "sha256-qBPAUQ7kTCIkLJB2tEj+XYoYdXmpGqeQ8BiVj489Ot0=";
   };
 
-  buildInputs = with pkgs; [
+  buildInputs = [
     mono
     msbuild
   ];
