@@ -31,6 +31,7 @@ stdenv.mkDerivation rec {
     libz
     stdenv.cc.cc.lib
     openssl
+    icu
   ];
 
   installPhase = ''
@@ -39,7 +40,7 @@ stdenv.mkDerivation rec {
     mv localtonet $out/localtonet
     chmod 777 $out/localtonet
     ln -s $out/localtonet $out/bin/localtonet
-    wrapProgram $out/bin/localtonet --set DOTNET_SYSTEM_GLOBALIZATION_INVARIANT 1 --set LD_LIBRARY_PATH ${openssl.out}/lib
+    wrapProgram $out/bin/localtonet --set LD_LIBRARY_PATH ${openssl.out}/lib:${icu.out}/lib
     runHook postInstall
   '';
 
