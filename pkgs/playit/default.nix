@@ -5,7 +5,7 @@
 (let
   pkgs = import <nixpkgs> {
     overlays = [
-      (import (fetchTarball "https://github.com/oxalica/rust-overlay/archive/master.tar.gz"))
+      (import (fetchTarball "https://github.com/oxalica/rust-overlay/archive/711ff40be18b09bf096930f52e1fb2fcbee9adf0.tar.gz"))
     ];
   };
 in pkgs.makeRustPlatform {
@@ -19,7 +19,7 @@ in pkgs.makeRustPlatform {
     owner = "playit-cloud";
     repo = "playit-agent";
     rev = "v${version}";
-    sha256 = "sha256-RRN0KAgFVXQGU6LdNWClBFlqO+Nl4SMNXDWfV0lOhAE";
+    sha256 = "sha256-jXd5pmnYi8fV/DeqiqhU3haCJZ/tDrKD4bW3uHikTxI=";
   };
 
   cargoLock.lockFile = "${src}/Cargo.lock";
