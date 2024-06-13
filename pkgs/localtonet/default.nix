@@ -47,6 +47,6 @@ stdenv.mkDerivation rec {
   meta = with lib; {
     homepage = "https://localtonet.com";
     description = "IP tunneling";
-    platforms = platforms.linux;
+    license.free = false;
   };
 }
