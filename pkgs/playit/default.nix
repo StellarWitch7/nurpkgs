@@ -24,4 +24,5 @@ in pkgs.makeRustPlatform {
 
   cargoLock.lockFile = "${src}/Cargo.lock";
   doCheck = false;
+  preferLocalBuild = true;
 }
