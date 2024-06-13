@@ -1,16 +1,16 @@
 { lib
-, rustPlatform
+, makeRustPlatform
 , fetchFromGitHub }:
 
 (let
-  pkgs = import <nixpkgs> {
+  rpkgs = import <nixpkgs> {
     overlays = [
       (import (fetchTarball "https://github.com/oxalica/rust-overlay/archive/711ff40be18b09bf096930f52e1fb2fcbee9adf0.tar.gz"))
     ];
   };
-in pkgs.makeRustPlatform {
-  cargo = pkgs.rust-bin.stable.latest.minimal;
-  rustc = pkgs.rust-bin.stable.latest.minimal;
+in makeRustPlatform {
+  cargo = rpkgs.rust-bin.stable.latest.minimal;
+  rustc = rpkgs.rust-bin.stable.latest.minimal;
 }).buildRustPackage rec {
   pname = "playit";
   version = "0.15.11";
