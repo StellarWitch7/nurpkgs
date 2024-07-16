@@ -26,6 +26,6 @@ in makeRustPlatform {
   doCheck = false;
 
   meta = with lib; {
-    preferLocalBuild = true;
+    broken = true;
   };
 }
