@@ -19,6 +19,7 @@ with pkgs; {
   vault = callPackage ./pkgs/vault { };
   nixbrains = callPackage ./pkgs/nixbrains { };
   easy-nixos = callPackage ./pkgs/easy-nixos { };
+  git-nixed = callPackage ./pkgs/git-nixed { };
 
   # programs/libraries by other people
   ImageSorter = callPackage ./pkgs/ImageSorter { };
