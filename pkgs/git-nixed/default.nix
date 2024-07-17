@@ -10,7 +10,7 @@ stdenv.mkDerivation rec {
     owner = "StellarWitch7";
     repo = "git-nixed";
     rev = "v${version}";
-    sha256 = "sha256-po0wcJ6FVHemAOysvbcEr37bIVV4jGxl6dLbc854eDI=";
+    sha256 = "sha256-vV/8/o0SjLWKy/OsgI1yf1myh8DiH721bpI6/b0GuwY=";
   };
 
   installPhase = ''
