@@ -5,7 +5,7 @@
 , nano }:
 
 stdenv.mkDerivation rec {
-  name = "easy-nixos";
+  pname = "easy-nixos";
   version = "1.5";
 
   src = fetchFromGitHub {

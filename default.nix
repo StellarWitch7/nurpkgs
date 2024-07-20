@@ -25,4 +25,7 @@ with pkgs; {
   ImageSorter = callPackage ./pkgs/ImageSorter { };
   localtonet = callPackage ./pkgs/localtonet { };
   playit = callPackage ./pkgs/playit { };
+
+  # games
+  bar = callPackage ./pkgs/bar { };
 }
