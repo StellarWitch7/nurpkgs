@@ -3,7 +3,7 @@
 , fetchFromGitHub
 , rust-bin }:
 
-makeRustPlatform {
+(makeRustPlatform {
   cargo = rust-bin.stable.latest.minimal;
   rustc = rust-bin.stable.latest.minimal;
 }).buildRustPackage rec {
