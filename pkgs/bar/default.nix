@@ -20,7 +20,7 @@ in appimageTools.wrapType2 {
     hash = "sha256-ZJW5BdxxqyrM2TJTO0SBp4BXt3ILyi77EZx73X8hqJE=";
   };
 
-  extraPkgs = pkgs: with pkgs; [
+  extraPkgs = pkgs: [
     binutils
     openal
     fuse
