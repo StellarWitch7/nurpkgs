@@ -9,7 +9,7 @@ with pkgs; {
   # programs/libraries by other people
   ImageSorter = callPackage ./ImageSorter { };
   localtonet = callPackage ./localtonet { };
-  playit = callPackage ./playit { inherit (pkgs) rust-bin; };
+  playit = callPackage ./playit { };
 
   # games
   bar = callPackage ./bar { };
