@@ -1,7 +1,7 @@
 { lib
 , makeRustPlatform
 , fetchFromGitHub
-, rust-bin ? (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/master.tar.gz")).rust-bin }:
+, rust-bin ? (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/master.tar.gz") { }).rust-bin }:
 
 (makeRustPlatform {
   cargo = rust-bin.stable.latest.minimal;
