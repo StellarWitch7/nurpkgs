@@ -21,6 +21,7 @@
   doCheck = false;
 
   meta = with lib; {
+    broken = true;
     # TODO
   };
 }
