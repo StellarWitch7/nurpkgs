@@ -7,15 +7,11 @@
 , nss
 , SDL2
 , gtk3
-, makeDesktopItem
-, copyDesktopItems }:
+, makeDesktopItem }:
 
-let
-  version = "1.2988.0";
-in appimageTools.wrapType2 {
+appimageTools.wrapType2 rec {
   pname = "bar";
-
-  inherit version;
+  version = "1.2988.0";
 
   src = fetchurl {
     url = "https://github.com/beyond-all-reason/BYAR-Chobby/releases/download/v${version}/Beyond-All-Reason-${version}.AppImage";
@@ -24,14 +20,14 @@ in appimageTools.wrapType2 {
 
   extraInstallCommands = let
     desktop = makeDesktopItem {
-      name = "bar";
+      name = pname;
       desktopName = "Beyond All Reason";
-      exec = "bar";
+      exec = pname;
       terminal = false;
     };
   in ''
     mkdir -p $out/share/applications
-    cp ${desktop}/share/applications/bar.desktop $out/share/applications/
+    cp ${desktop}/share/applications/${pname}.desktop $out/share/applications/
   '';
 
   extraPkgs = pkgs: [
