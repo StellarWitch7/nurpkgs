@@ -6,7 +6,8 @@
 , fuse
 , nss
 , SDL2
-, gtk3 }:
+, gtk3
+, makeDesktopItem }:
 
 let
   version = "1.2988.0";
@@ -27,6 +28,12 @@ in appimageTools.wrapType2 {
     nss
     SDL2
     gtk3
+    (makeDesktopItem {
+      name = "bar";
+      desktopName = "Beyond All Reason";
+      exec = "bar";
+      terminal = false;
+    })
   ];
 
   meta = with lib; {
