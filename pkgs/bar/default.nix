@@ -7,7 +7,8 @@
 , nss
 , SDL2
 , gtk3
-, makeDesktopItem }:
+, makeDesktopItem
+, copyDesktopItems }:
 
 let
   version = "1.2988.0";
@@ -21,6 +22,18 @@ in appimageTools.wrapType2 {
     hash = "sha256-ZJW5BdxxqyrM2TJTO0SBp4BXt3ILyi77EZx73X8hqJE=";
   };
 
+  extraInstallCommands = let
+    desktop = makeDesktopItem {
+      name = "bar";
+      desktopName = "Beyond All Reason";
+      exec = "bar";
+      terminal = false;
+    };
+  in ''
+    mkdir -p $out/share/applications
+    cp ${desktop}/share/applications/bar.desktop $out/share/applications/
+  '';
+
   extraPkgs = pkgs: [
     binutils
     openal
@@ -28,12 +41,6 @@ in appimageTools.wrapType2 {
     nss
     SDL2
     gtk3
-    (makeDesktopItem {
-      name = "bar";
-      desktopName = "Beyond All Reason";
-      exec = "bar";
-      terminal = false;
-    })
   ];
 
   meta = with lib; {
