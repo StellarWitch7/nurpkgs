@@ -10,6 +10,7 @@ with pkgs; {
   ImageSorter = callPackage ./ImageSorter { };
   localtonet = callPackage ./localtonet { };
   playit = callPackage ./playit { };
+  i3-animated-wallpaper = callPackage ./i3-animated-wallpaper { };
 
   # games
   bar = callPackage ./bar { };
