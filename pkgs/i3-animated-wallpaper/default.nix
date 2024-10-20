@@ -8,8 +8,8 @@ let
   src = fetchFromGitHub {
     owner = "StellarWitch7";
     repo = "i3-animated-background";
-    rev = "833ba818aac09df384b49179f0930c6a6f8b42e2";
-    hash = "sha256-Opyc3GkXhFXJDEcMyrW2EkfCpK3jf3TAOEwHGLHWuzg=";
+    rev = "d136e24dd273ce1e9240aa609443c98621cfaa46";
+    hash = "sha256-Ibszx9DtNZFkGAmmnt/aEox/3W14Rm5HtBoYMTqD+6I=";
   };
   generate = writeShellApplication {
     name = "generate";
@@ -23,7 +23,7 @@ let
   };
 in stdenv.mkDerivation {
   pname = "i3-animated-background";
-  version = "1.0.0";
+  version = "1.0.1";
 
   src = ./.;
 
