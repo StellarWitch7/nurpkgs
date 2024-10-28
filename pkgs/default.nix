@@ -9,8 +9,8 @@ with pkgs; {
 
   # programs/libraries by other people
   ImageSorter = callPackage ./ImageSorter { };
-  localtonet = callPackage ./localtonet { };
-  playit = callPackage ./playit { };
+  #localtonet = callPackage ./localtonet { };
+  #playit = callPackage ./playit { };
   i3-animated-wallpaper = callPackage ./i3-animated-wallpaper { };
 
   # games
