@@ -4,10 +4,20 @@
 , makeWrapper
 , xorg
 , libxkbcommon
-, libGL }:
+, libGL
+, xclip }:
 
 let
   maintainer = "StellarWitch7";
+  libs = [
+    libxkbcommon
+    libGL
+  ] ++ (with xorg; [
+    libX11
+    libXcursor
+    libxcb
+    libXi
+  ]);
 in rustPlatform.buildRustPackage rec {
   pname = "dont-repeat-yourself";
   version = "2.0.0";
@@ -24,16 +34,11 @@ in rustPlatform.buildRustPackage rec {
   ];
 
   buildInputs = [
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libxcb
-    xorg.libXi
-    libxkbcommon
-    libGL
-  ];
+    xclip
+  ] ++ libs;
 
   postInstall = ''
-    wrapProgram $out/bin/${pname} --set LD_LIBRARY_PATH ${lib.makeLibraryPath buildInputs}
+    wrapProgram $out/bin/${pname} --set LD_LIBRARY_PATH ${lib.makeLibraryPath libs}
   '';
 
   cargoLock = {
