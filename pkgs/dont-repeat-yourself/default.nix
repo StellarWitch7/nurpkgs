@@ -10,13 +10,13 @@ let
   maintainer = "StellarWitch7";
 in rustPlatform.buildRustPackage rec {
   pname = "dont-repeat-yourself";
-  version = "1.0.0";
+  version = "2.0.0";
 
   src = fetchFromGitHub {
     owner = maintainer;
     repo = pname;
     rev = "v${version}";
-    sha256 = "sha256-XSsVctUzJNV0B/X3eWH4ONpRlzFzr03UBjr42H1srO8=";
+    sha256 = "sha256-OzcASKxUhLDopJVYqTYqfR8/nJ8uvXqmEKGKaOSSfwQ=";
   };
 
   nativeBuildInputs = [
@@ -36,7 +36,14 @@ in rustPlatform.buildRustPackage rec {
     wrapProgram $out/bin/${pname} --set LD_LIBRARY_PATH ${lib.makeLibraryPath buildInputs}
   '';
 
-  cargoLock.lockFile = "${src}/Cargo.lock";
+  cargoLock = {
+    lockFile = "${src}/Cargo.lock";
+
+    outputHashes = {
+      "x11-clipboard-0.9.3" = "sha256-rgFnPA4aqbfKLygpoyLTkfdLcB6v1cGlka0uUcUG574=";
+    };
+  };
+
   doCheck = false;
 
   meta = with lib; {
