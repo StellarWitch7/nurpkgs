@@ -42,7 +42,7 @@ in rustPlatform.buildRustPackage rec {
   '';
 
   cargoLock = {
-    lockFile = "${src}/Cargo.lock";
+    lockFile = "Cargo.lock";
 
     outputHashes = {
       "x11-clipboard-0.9.3" = "sha256-FQEBzs1hl2oXr0qrUmN2C/AmM4bds4+97uXuaO5BvPc=";
