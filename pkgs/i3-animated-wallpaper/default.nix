@@ -32,4 +32,8 @@ in stdenv.mkDerivation {
     ln -s ${generate.out}/bin/generate $out/bin/i3-wp-generate
     ln -s ${loop.out}/bin/loop $out/bin/i3-wp-loop
   '';
+
+  meta = with lib; {
+    broken = true;
+  };
 }
