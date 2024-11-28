@@ -56,5 +56,6 @@ in rustPlatform.buildRustPackage rec {
     description = "Keyboard-only clipboard manager";
     license = licenses.mit;
     maintainers = [ maintainer ];
+    broken = true;
   };
 }
