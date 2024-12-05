@@ -20,9 +20,15 @@ appimageTools.wrapType2 rec {
 
   extraInstallCommands = let
     desktop = makeDesktopItem {
-      name = pname;
       desktopName = "Beyond All Reason";
+      icon = fetchurl {
+        url = "https://avatars.githubusercontent.com/u/47949701";
+        hash = "sha256-dCrCX3AKgsn8mvss2mGHi7rZqqTnKBd0POpbudXWA8M=";
+      };
+
+      name = pname;
       exec = pname;
+
       terminal = false;
     };
   in ''
