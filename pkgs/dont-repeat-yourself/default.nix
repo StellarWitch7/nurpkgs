@@ -37,7 +37,7 @@ in rustPlatform.buildRustPackage rec {
     xclip
   ] ++ libs;
 
-  postInstall = ''
+  postFixup = ''
     wrapProgram $out/bin/${pname} --set LD_LIBRARY_PATH ${lib.makeLibraryPath libs}
   '';
 
