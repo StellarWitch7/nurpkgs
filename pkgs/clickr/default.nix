@@ -4,13 +4,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "clickr";
-  version = "1.0.0";
+  version = "2.0.0";
 
   src = fetchFromGitHub {
     owner = "StellarWitch7";
     repo = "clickr";
     rev = "v${version}";
-    sha256 = "sha256-v++UZxJFnHqD8ToAYcLbrD1tBdarR6O6uNFNL3yex+g=";
+    sha256 = "sha256-eWMsBkXvDQBmKN5Vx6+1EYEnT95vJEkBGL5TTfrGyWE=";
   };
 
   buildInputs = [
