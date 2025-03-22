@@ -1,6 +1,6 @@
 { pkgs }:
 
-with pkgs; {
+with pkgs; rec {
   # my programs/libraries
   vault = callPackage ./vault { };
   easy-nixos = callPackage ./easy-nixos { };
@@ -11,6 +11,11 @@ with pkgs; {
   # programs/libraries by other people
   ImageSorter = callPackage ./ImageSorter { };
   i3-animated-wallpaper = callPackage ./i3-animated-wallpaper { };
+
+  # element
+  element-web-unwrapped = callPackage ./element-web-unwrapped/package.nix { };
+  element-web = callPackage ./element-web/package.nix { inherit element-web-unwrapped; };
+  element-desktop = callPackage ./element-desktop/package.nix { inherit element-web; };
 
   # games
   bar = callPackage ./bar { };
