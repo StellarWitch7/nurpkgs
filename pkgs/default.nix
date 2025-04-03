@@ -7,6 +7,7 @@ with pkgs; rec {
   git-nixed = callPackage ./git-nixed { };
   dont-repeat-yourself = callPackage ./dont-repeat-yourself { };
   clickr = callPackage ./clickr { };
+  i3lock-blurred = callPackage ./i3lock-blurred { };
 
   # programs/libraries by other people
   ImageSorter = callPackage ./ImageSorter { };
