@@ -12,6 +12,7 @@ with pkgs; rec {
   # programs/libraries by other people
   ImageSorter = callPackage ./ImageSorter { };
   i3-video-wallpaper = callPackage ./i3-video-wallpaper { };
+  clickrtraining = callPackage ./clickrtraining { };
 
   # element
   element-web-unwrapped = callPackage ./element-web-unwrapped/package.nix { };
