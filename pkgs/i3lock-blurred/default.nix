@@ -25,7 +25,8 @@ writeShellScriptBin "i3lock-blurred" ''
     ${imagemagick.out}/bin/convert $img -scale 10% -scale 1000% $img
 
     # lock the screen
-    ${i3lock-color.out}/bin/i3lock -n --force-clock -i $img -e --indicator \
+    ${i3lock-color.out}/bin/i3lock -i $img -enb \
+        --force-clock --indicator --pass-volume-keys \
         --radius=30 --ring-width=60 --inside-color=$bg \
         --ring-color=$ring --insidever-color=$verify --ringver-color=$verify \
         --insidewrong-color=$wrong --ringwrong-color=$wrong --line-uses-inside \
@@ -40,7 +41,6 @@ writeShellScriptBin "i3lock-blurred" ''
         --verif-pos="300:655" --date-color=$date --time-color=$date \
         --greeter-color=$fg --wrong-color=$wrong --verif-color=$verify \
         --verif-pos="300:820" --pointer=default --refresh-rate=0 \
-        --pass-media-keys --pass-volume-keys
 
     # resume message display
     pkill -u "$USER" -USR2 dunst
